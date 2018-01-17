@@ -1,0 +1,30 @@
+<form>
+  <md-card>
+    <md-card-header>
+      <md-card-title>登录:</md-card-title>
+    </md-card-header>
+    <md-card-content>
+      <md-input-container class="full-width">
+        <input type="text" mdInput placeholder="您的email">
+      </md-input-container>
+      <md-input-container class="full-width">
+        <input type="password" mdInput placeholder="您的密码">
+      </md-input-container>
+      <button md-raised-button type="button">登录</button>
+    </md-card-content>
+    <md-card-actions class="text-right">
+      <p>还没有账户?<a href="" [routerLink]="['/register']">注册</a></p>
+      <p>还没有账户?<a href="">找回</a></p>
+    </md-card-actions>
+</md-card>
+  <md-card>
+    <md-card-header>
+      <md-card-title>每日佳句</md-card-title>
+      <md-card-subtitle>子曰：“君子周而不比，小人比而不周。”</md-card-subtitle>
+    </md-card-header>
+    <img md-card-image src="/assets/quote_fallback.jpg" alt="">
+    <md-card-content>
+      Confucius said: "the gentleman villain than and not cooperate to do good deeds."
+    </md-card-content>
+  </md-card>
+</form>
