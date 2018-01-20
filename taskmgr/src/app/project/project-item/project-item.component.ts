@@ -1,11 +1,15 @@
-import { Component, OnInit, Input, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
+import {
+  Component, OnInit, Input, Output, EventEmitter, HostBinding, HostListener,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { cardAnim } from '../../anims/card.anim'
 
 @Component({
   selector: 'app-project-item',
   templateUrl: './project-item.component.html',
   styleUrls: ['./project-item.component.scss'],
-  animations: [cardAnim]
+  animations: [cardAnim],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectItemComponent implements OnInit {
 
@@ -23,6 +27,10 @@ export class ProjectItemComponent implements OnInit {
   @HostListener('mouseenter', ['$event.target'])
   onMouseEnter(target) {
     this.carState = 'hover';
+  }
+  @HostListener('mouseleave', ['$event.target'])
+  onMouseLeave(target) {
+    this.carState = 'out';
   }
 
   onInviteClick() {
